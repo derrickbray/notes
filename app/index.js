@@ -69,8 +69,8 @@ import character from './fringe';
 
 class Character {
   constructor(data) {
-    this.firstName = data.firstName;
-    this.lastName = data.lastName;
+    this.first = data.firstName;
+    this.last = data.lastName;
     this.universe = data.universe;
     this.age = data.age;
     this.profession = data.profession;
@@ -103,7 +103,7 @@ character.forEach((item) => {
 
   el.querySelector('.character__name').innerText = `${c.first} ${c.last}`;
   el.querySelector('.character__profession').innerText = c.profession;
-  el.querySelector('.character__name').innerText = c.age;
+  el.querySelector('.character__age').innerText = c.age;
 
   document.body.appendChild(el);
 
