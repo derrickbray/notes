@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-  // practicing with prototypes
+// practicing with prototypes
 
 const duck = 'Daffy';
 
@@ -16,7 +16,10 @@ const h = {
 
 function createCharacter(firstName, lastName, age, occupation) {
   return {
-    firstName, lastName, age, occupation,
+    firstName,
+    lastName,
+    age,
+    occupation,
     getFullName() {
       return `${this.firstName} ${this.lastName}`;
     },
@@ -50,4 +53,36 @@ console.log(typeof m3);
 console.log(m3 instanceof Simpson);
 console.log(m3.getFullName);
 
-// debugger;
+import character from './fringe';
+
+// function Character(data) {
+//   this.firstName = data.firstName;
+//   this.lastName = data.lastName;
+//   this.universe = data.universe;
+//   this.age = data.age;
+//   this.profession = data.profession;
+// }
+
+// character.prototype.isTrustworthy = function () {
+//   return this.universe === 1;
+// };
+
+class Character {
+  constructor(data) {
+    this.firstName = data.firstName;
+    this.lastName = data.lastName;
+    this.universe = data.universe;
+    this.age = data.age;
+    this.profession = data.profession;
+  }
+
+  isTrustworthy() {
+    return this.universe === 1;
+  }
+}
+
+Character.prototype.showName = 'Fringe';
+
+const olivia = new Character(character[0]);
+console.log(olivia.showName);
+console.log(olivia.isTrustworthy());
