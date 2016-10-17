@@ -86,3 +86,26 @@ Character.prototype.showName = 'Fringe';
 const olivia = new Character(character[0]);
 console.log(olivia.showName);
 console.log(olivia.isTrustworthy());
+
+// for (let i = 0; i < character.length; i++) {
+//   const c = new Character(character[i]);
+//   console.log(c);
+// }
+character.forEach((item) => {
+  const c = new Character(item);
+
+  const el = document.createElement('div');
+  el.classList.add('character');
+  el.innerHTML = `
+  <p class="character__name"></p>
+  <p class="character__profession"></p>
+  <p class="character__age"></p>`;
+
+  el.querySelector('.character__name').innerText = `${c.first} ${c.last}`;
+  el.querySelector('.character__profession').innerText = c.profession;
+  el.querySelector('.character__name').innerText = c.age;
+
+  document.body.appendChild(el);
+
+  console.log(c);
+});
