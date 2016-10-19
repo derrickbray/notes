@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 // practicing with prototypes
+import 'exercises';
 
 const duck = 'Daffy';
 
@@ -8,22 +9,22 @@ console.log(duck.length);
 console.log(duck.split(''));
 
 const h = {
-  firstName: 'Homer',
-  lastName: 'Simpson',
-  age: 39,
-  occupation: 'safety inspector',
+    firstName: 'Homer',
+    lastName: 'Simpson',
+    age: 39,
+    occupation: 'safety inspector'
 };
 
 function createCharacter(firstName, lastName, age, occupation) {
-  return {
-    firstName,
-    lastName,
-    age,
-    occupation,
-    getFullName() {
-      return `${this.firstName} ${this.lastName}`;
-    },
-  };
+    return {
+        firstName,
+        lastName,
+        age,
+        occupation,
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    };
 }
 
 const m2 = createCharacter('marge', 'Simpson', 36, 'curently unemployed');
@@ -36,13 +37,13 @@ console.log(h2.getFullName());
 
 // the "new" keyword and constructor functions
 function Simpson(firstName, lastName, age, occupation) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.age = age;
-  this.occupation = occupation;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.occupation = occupation;
 }
-Simpson.prototype.getFullName = function () {
-  return `${this.firstName} ${this.lastName}`;
+Simpson.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`;
 };
 
 const m3 = new Simpson('marge', 'simpson', 36, 'unemployed');
@@ -68,17 +69,17 @@ import character from './fringe';
 // };
 
 class Character {
-  constructor(data) {
-    this.first = data.firstName;
-    this.last = data.lastName;
-    this.universe = data.universe;
-    this.age = data.age;
-    this.profession = data.profession;
-  }
+    constructor(data) {
+        this.first = data.firstName;
+        this.last = data.lastName;
+        this.universe = data.universe;
+        this.age = data.age;
+        this.profession = data.profession;
+    }
 
-  isTrustworthy() {
-    return this.universe === 1;
-  }
+    isTrustworthy() {
+        return this.universe === 1;
+    }
 }
 
 Character.prototype.showName = 'Fringe';
@@ -92,20 +93,20 @@ console.log(olivia.isTrustworthy());
 //   console.log(c);
 // }
 character.forEach((item) => {
-  const c = new Character(item);
+    const c = new Character(item);
 
-  const el = document.createElement('div');
-  el.classList.add('character');
-  el.innerHTML = `
+    const el = document.createElement('div');
+    el.classList.add('character');
+    el.innerHTML = `
   <p class="character__name"></p>
   <p class="character__profession"></p>
   <p class="character__age"></p>`;
 
-  el.querySelector('.character__name').innerText = `${c.first} ${c.last}`;
-  el.querySelector('.character__profession').innerText = c.profession;
-  el.querySelector('.character__age').innerText = c.age;
+    el.querySelector('.character__name').innerText = `${c.first} ${c.last}`;
+    el.querySelector('.character__profession').innerText = c.profession;
+    el.querySelector('.character__age').innerText = c.age;
 
-  document.body.appendChild(el);
+    document.body.appendChild(el);
 
-  console.log(c);
+    console.log(c);
 });
