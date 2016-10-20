@@ -53,8 +53,8 @@ form.addEventListener('submit', (ev) => {
 const later = new Promise((resolve, reject) => {
   setTimeout(() => {
         // resolve('Timeout Promise');
-    reject('something went wrong');
-  }, 1000);
+    reject('something went terribly wrong');
+  }, 2000);
 });
 
 const after = document.createElement('h4');
@@ -66,3 +66,14 @@ later.then((information) => {
   after.innerText = 'There was an error';
   console.log(err);
 });
+
+// getting API data
+
+fetch('https://randomuser.me/api')
+  .then((result) => result.json())
+  .then((data) => {
+    const person = data.results[0];
+    console.log(person);
+
+    document.querySelector('.user__first-name').innerText = person.name.first;
+  });
