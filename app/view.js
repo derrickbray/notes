@@ -8,7 +8,7 @@ export default class ResultListView {
     // array loop our model
     this.model.forEach((result) => {
       const row = document.createElement('tr');
-      row.classlist.add('result');
+      row.classList.add('result');
 
       row.innerHTML = `
       <td class="result__time"></td>
