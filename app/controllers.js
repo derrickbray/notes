@@ -1,5 +1,5 @@
 import ResultListView from './view';
-
+import FormView from './form-view';
 export default class AppController {
   constructor(appElement) {
     this.appElement = appElement;
@@ -19,5 +19,6 @@ export default class AppController {
           const resultView = new ResultListView(this.appElement.querySelector('.results-table__list'), this.model);
           resultView.render();
         });
+    this.FormView = new FormView(this.appElement.querySelector('.home-form'));
   }
 }
