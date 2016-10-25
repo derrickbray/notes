@@ -25,6 +25,7 @@ export default class ResultListView {
   }
 
   render() {
+    this.el.innerHTML = '';
         // array loop our model
     this.model.forEach((result) => {
       const row = new ResultItemView(result);

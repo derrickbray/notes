@@ -11,15 +11,16 @@ export default class AppController {
     // render views
     // setup a view to handle form
   start() {
+    this.resultView = new ResultListView(this.appElement.querySelector('.results-table__list'), this.model);
+    this.FormView = new FormView(this.appElement.querySelector('.home-form'), this);
     fetch('http://tiny-tn.herokuapp.com/collections/dwb-bpm')
         .then((res) => res.json())
         .then((data) => {
           this.model = data;
+          this.resultView.model = this.model;
 
-          const resultView = new ResultListView(this.appElement.querySelector('.results-table__list'), this.model);
-          resultView.render();
+          this.resultView.render();
         });
-    this.FormView = new FormView(this.appElement.querySelector('.home-form'), this);
   }
 
   logHeartrate(user, bpm) {
@@ -28,10 +29,13 @@ export default class AppController {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ user, bpm }),
+      body: JSON.stringify({ user, bpm, time: new Date() }),
     }).then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      this.model = [data, ...this.model];
+      this.resultView.model = this.model;
+
+      this.resultView.render();
     });
   }
 }
