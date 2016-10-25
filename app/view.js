@@ -1,3 +1,23 @@
+class ResultItemView {
+  constructor(model) {
+        // setup data for our current table item
+    this.model = model;
+
+    this.el = document.createElement('tr');
+    this.el.classList.add('result');
+
+    this.el.innerHTML = `
+    <td class="result__time"></td>
+    <td class="result__user"></td>
+    <td class="result__bpm"></td>`;
+  }
+  render() {
+    this.el.querySelector('.result__time').innerText = this.model.time;
+    this.el.querySelector('.result__user').innerText = this.model.user;
+    this.el.querySelector('.result__bpm').innerText = this.model.bpm;
+  }
+}
+
 export default class ResultListView {
   constructor(el, model) {
     this.el = el;
@@ -5,23 +25,11 @@ export default class ResultListView {
   }
 
   render() {
-    // array loop our model
+        // array loop our model
     this.model.forEach((result) => {
-      const row = document.createElement('tr');
-      row.classList.add('result');
-
-      row.innerHTML = `
-      <td class="result__time"></td>
-      <td class="result__user"></td>
-      <td class="result__bpm"></td>`;
-
-      row.querySelector('.result__time').innerText = result.time;
-      row.querySelector('.result__user').innerText = result.user;
-      row.querySelector('.result__bpm').innerText = result.bpm;
-
-      this.el.appendChild(row);
+      const row = new ResultItemView(result);
+      row.render();
+      this.el.appendChild(row.el);
     });
-    // create new result row
-    // append result row to the list
   }
 }
