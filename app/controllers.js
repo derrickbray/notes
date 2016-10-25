@@ -19,6 +19,19 @@ export default class AppController {
           const resultView = new ResultListView(this.appElement.querySelector('.results-table__list'), this.model);
           resultView.render();
         });
-    this.FormView = new FormView(this.appElement.querySelector('.home-form'));
+    this.FormView = new FormView(this.appElement.querySelector('.home-form'), this);
+  }
+
+  logHeartrate(user, bpm) {
+    fetch('http://tiny-tn.herokuapp.com/collections/dwb-bpm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user, bpm }),
+    }).then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
   }
 }
