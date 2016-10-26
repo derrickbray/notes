@@ -16,7 +16,7 @@
       <input type="number" class="home-form__input" name="bpm" placeholder="BPM" id="home-form-bpm">
       <button class="btn btn--submit" type="submit">Submit!</button>
     </form>
-    <table class="results-table">
+    <table class="results-table" cellspacing="0">
       <thead>
         <th>Date</th>
         <th>Initials</th>
@@ -26,7 +26,20 @@
 
       </tbody>
     </table>
-
+    <div class="info">
+      <ul class="users">
+        <li>All Users</li>
+        <li>ryan</li>
+        <li>isaac</li>
+        <li>kara</li>
+        <li>derrick</li>
+      </ul>
+      <div class="info__row">
+        <h3 class="max-heartrate"></h3>
+        <h3 class="min-heartrate"></h3>
+        <h3 class="avg-heartrate"></h3>
+      </div>
+    </div>
   </div>
   <script src="./app.js" charset="utf-8"></script>
 </body>
