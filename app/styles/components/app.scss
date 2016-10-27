@@ -1,0 +1,15 @@
+.app {
+  display: flex;
+  height: 100vh;
+
+  &__sidebar {
+    background: $c-primary-light;
+    overflow-y: auto;
+  }
+
+  &__main {
+    flex-grow: 1;
+    background: orange;
+    overflow-y: auto;
+  }
+}
