@@ -7,61 +7,27 @@
   <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-  <div class="app">
+  <div class="app" id="app">
     <div class="app__sidebar">
       <ul class="name-list">
-        <li class="name-list__item name-list__item-active">
-          <a href="" class="name-list__link">Bulbazar</a>
+        <li class="name-list__item name-list__item-active" v-for="creature in pokemon">
+          <a href="" class="name-list__link">{{creature}}</a>
         </li>
       </ul>
-      <ul class="name-list">
-        <li class="name-list__item name-list__item-active">
-          <a href="" class="name-list__link">Bulbazar</a>
-        </li>
-      </ul>
-      <ul class="name-list">
-        <li class="name-list__item name-list__item-active">
-          <a href="" class="name-list__link">Bulbazar</a>
-        </li>
-      </ul>
-      <ul class="name-list">
-        <li class="name-list__item name-list__item-active">
-          <a href="" class="name-list__link">Bulbazar</a>
-        </li>
-      </ul>
+
     </div>
     <div class="app__main">
       <figure class="pokemon-data">
-        <h2 class="pokemon-data__name">Bulbazar</h2>
+        <h2 class="pokemon-data__name">{{ name }}</h2>
         <ul class="pokemon-data__stats">
-          <li class="pokemon-data__stats-item">
+          <li class="pokemon-data__stats-item" v-for="creature in pokemon">
             <span class="stats-label">Health</span>
 
             <div class="stats-bar">
               <span class="stats-bar__fill" style="flex-basis: calc(46 / 150 * 100%);">46</span>
             </div>
           </li>
-          <li class="pokemon-data__stats-item">
-            <span class="stats-label">Health</span>
 
-            <div class="stats-bar">
-              <span class="stats-bar__fill">46</span>
-            </div>
-          </li>
-          <li class="pokemon-data__stats-item">
-            <span class="stats-label">Health</span>
-
-            <div class="stats-bar">
-              <span class="stats-bar__fill">46</span>
-            </div>
-          </li>
-          <li class="pokemon-data__stats-item">
-            <span class="stats-label">Health</span>
-
-            <div class="stats-bar">
-              <span class="stats-bar__fill">46</span>
-            </div>
-          </li>
         </ul>
       </figure>
     </div>
