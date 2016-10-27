@@ -3,34 +3,29 @@ import 'whatwg-fetch';
 import Vue from 'vue/dist/vue';
 
 const App = Vue.extend({
-
-});
-
-new App({
-  el: '.app',
   data() {
-    const model = {
-      name: 'Hello from JavaScript',
-
-      pokemon: [
-        'Bulbasaur',
-        'Pikachu',
-        'Squerttle',
-        'tom',
-        'dick',
-        'harry',
-      ],
+    return {
+      name: '',
+      pokemon: null,
+      currentSelection: null,
     };
-    setTimeout(() => {
-      alert('Charmander is evolving!!!');
+  },
+  mounted() {
+    fetch('http://pokeapi.co/api/v2/pokemon')
+    .then((r) => r.json())
+    .then((data) => {
+      this.pokemon = data.results;
+      this.choosePokemon(data.results[0]);
+    });
+  },
 
-      this.pokemon = this.pokemon.map((p) => {
-        if (p === 'Pikachu') {
-          return 'Pikapoo';
-        }
-        return p;
+  methods: {
+    choosePokemon(pokemon) {
+      fetch(pokemon.url)
+      .then((r) => json())
+      .then((data) => {
+        this.currentSelection = data;
       });
-    }, 5000);
-    return model;
+    },
   },
 });
