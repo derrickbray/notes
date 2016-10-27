@@ -69,7 +69,7 @@ const isFirstOccurance = (current, index, arr) => {
   return arr.indexOf(current) === index;
 };
 
-test('it checks if first occurance', (assert =>) {
+test('it checks if first occurance', (assert) => {
   const ['ryan', 'ryan', 'bob'];
 
   assert.equal(isFirstOccurance('ryan', 0, people), true);
@@ -78,5 +78,5 @@ test('it checks if first occurance', (assert =>) {
 
   const unique = people.filter(isFirstOccurance);
 
-  assert.deepEqual(unique, ['ryan', 'bob'])
 });
+assert.deepEqual(unique, ['ryan', 'bob']);
