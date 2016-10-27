@@ -1,0 +1,13 @@
+.stats-bar {
+  display: flex;
+  border-radius: 0.4rem;
+  background: $c-grey;
+  overflow: hidden;
+
+  &__fill {
+    flex-basis: calc(46 / 150 * 100%);
+    padding: 0.2rem;
+    background: $c-pop-light;
+    color: $c-white;
+  }
+}

@@ -9,13 +9,14 @@ $c-pop: #59293a;
 $c-pop-light: #c0555d;
 
 $c-white: #dedede;
-$c-grey: destaturate($c-primary-light,30%);
+$c-grey: desaturate($c-primary-light, 30%);
 
 $m-gutter: 0.5rem;
 $m-maxwidth: 50rem;
-// $media-phone: (min-width)
+// $media-phone: (min-width: ;)
 
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 @import 'reset';
 @import 'components/app';
+@import 'components/stats-bar'
