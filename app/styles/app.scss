@@ -2,5 +2,42 @@
 // @import 'normalize-css/normalize';
 
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+
+$c-primary-blue: #0466b2;
+$c-primary-grey: #393939;
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+
+.app {
+}
+.container {
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.flex__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments {
+
+  background: yellow;
+}
+
+.img-switcher {
+  background: orange;
+
+  &__title {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.btn {
+  background: $c-primary-blue;
+}
+
+img {
+  width: 70%;
+}
