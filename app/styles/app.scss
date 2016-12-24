@@ -44,15 +44,19 @@ $c-primary-grey: #393939;
   color: white;
 }
 
-.frame {
-  // height: 30vh;
+.date {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  color: white;
+}
 
+.frame {
   img {
-    background: $c-primary-blue;
-    // object-fit: cover;
     max-width: 65rem;
-    max-height: 65vh;
+    max-height: 60vh;
     border: 2px solid white;
+    background: $c-primary-blue;
   }
 }
 

@@ -14,7 +14,7 @@
         <div class="img-switcher__title"><h1>{{ apod.title }}</h1></div>
         <button class="btn" @click="goForward()"><i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></button>
       </div>
-
+      <h3 class="date">{{ apod.date }}</h3>
       <div class="flex">
         <div class="img-switcher">
           <div class="frame">
