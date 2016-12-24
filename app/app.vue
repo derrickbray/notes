@@ -5,13 +5,13 @@
       <div class="img-switcher__title"><h1>{{ apod.title }}</h1></div>
       <div class="flex__box">
 
-        <button class="btn" @click="goBack()">Back</button>
+        <button class="btn" @click="goBack()"><i class="fa fa-angle-left fa-4x" aria-hidden="true"></i></button>
         <div class="img-switcher">
           <div class="frame">
             <img :src="apod.url" :alt="apod.title"/>
           </div>
         </div>
-        <button class="btn" @click="goForward()">Forward</button>
+        <button class="btn" @click="goForward()"><i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></button>
 
       </div>
     </div>

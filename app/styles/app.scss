@@ -1,7 +1,7 @@
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
 $c-primary-blue: #0466b2;
 $c-primary-grey: #393939;
@@ -35,10 +35,12 @@ $c-primary-grey: #393939;
 }
 
 .btn {
+  border: 1px solid black;
   outline: none;
-  background: $c-primary-blue;
+  background: white;
 }
 
 img {
+  max-width: 65rem;
   height: 85vh;
 }
