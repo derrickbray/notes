@@ -8,39 +8,58 @@ $c-primary-grey: #393939;
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 
+.app {
+  height: 100vh;
+  background: url('star-back-deep.jpeg') no-repeat fixed;
+  background-size: cover;
+}
+
 .container {
   max-width: 65rem;
   margin: 0 auto;
 }
 
-.flex__box {
+.title-flex {
   display: flex;
-  justify-content: center;
-  height: 85vh;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
 }
 
-.img-switcher {
+.nasa {
+  width: 10rem;
+}
+
+.nasa-title {
+  width: 100%;
+  text-align: center;
+}
+
+.flex {
   display: flex;
   justify-content: center;
+}
 
-  &__title {
-    display: flex;
-    justify-content: space-around;
-  }
+.img-switcher__title {
+  color: white;
 }
 
 .frame {
-  height: 30vh;
-  background: blue;
+  // height: 30vh;
+
+  img {
+    background: $c-primary-blue;
+    // object-fit: cover;
+    max-width: 65rem;
+    max-height: 65vh;
+    border: 2px solid white;
+  }
 }
 
 .btn {
-  border: 1px solid black;
+  margin: 0 2rem;
+  border: 0;
   outline: none;
-  background: white;
-}
-
-img {
-  max-width: 65rem;
-  height: 85vh;
+  background: transparent;
+  color: white;
 }

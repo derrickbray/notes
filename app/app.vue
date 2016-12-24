@@ -2,16 +2,25 @@
   <div class="app">
 
     <div class="container">
-      <div class="img-switcher__title"><h1>{{ apod.title }}</h1></div>
-      <div class="flex__box">
+      <div class="title-flex">
+        <div class="nasa">
+          <img src="nasa-logo-black.png" alt="" />
+        </div>
+        <h1 class="nasa__title">You Found It!  Nasa's Picture of the Day</h1>
+      </div>
 
+      <div class="flex">
         <button class="btn" @click="goBack()"><i class="fa fa-angle-left fa-4x" aria-hidden="true"></i></button>
+        <div class="img-switcher__title"><h1>{{ apod.title }}</h1></div>
+        <button class="btn" @click="goForward()"><i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="flex">
         <div class="img-switcher">
           <div class="frame">
             <img :src="apod.url" :alt="apod.title"/>
           </div>
         </div>
-        <button class="btn" @click="goForward()"><i class="fa fa-angle-right fa-4x" aria-hidden="true"></i></button>
 
       </div>
     </div>
