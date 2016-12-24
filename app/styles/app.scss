@@ -8,8 +8,6 @@ $c-primary-grey: #393939;
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 
-.app {
-}
 .container {
   max-width: 65rem;
   margin: 0 auto;
@@ -17,16 +15,13 @@ $c-primary-grey: #393939;
 
 .flex__box {
   display: flex;
-  justify-content: space-between;
-}
-
-.comments {
-
-  background: yellow;
+  justify-content: center;
+  height: 85vh;
 }
 
 .img-switcher {
-  background: orange;
+  display: flex;
+  justify-content: center;
 
   &__title {
     display: flex;
@@ -34,10 +29,16 @@ $c-primary-grey: #393939;
   }
 }
 
+.frame {
+  height: 30vh;
+  background: blue;
+}
+
 .btn {
+  outline: none;
   background: $c-primary-blue;
 }
 
 img {
-  width: 70%;
+  height: 85vh;
 }

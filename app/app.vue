@@ -2,17 +2,17 @@
   <div class="app">
 
     <div class="container">
+      <div class="img-switcher__title"><h1>{{ apod.title }}</h1></div>
       <div class="flex__box">
+
+        <button class="btn" @click="goBack()">Back</button>
         <div class="img-switcher">
-          <div class="img-switcher__title">
-            <button class="btn" @click="goBack()">Back</button>
-            <h1>{{ apod.title }}</h1>
-            <button class="btn" @click="goForward()">Forward</button>
-          </div>
           <div class="frame">
             <img :src="apod.url" :alt="apod.title"/>
           </div>
         </div>
+        <button class="btn" @click="goForward()">Forward</button>
+
       </div>
     </div>
   </div>
@@ -38,12 +38,11 @@ export default Vue.extend({
 
   mounted() {
     this.getNasaData();
-    this.getComments();
   },
   methods: {
     getNasaData() {
       const dateFormatted = this.date.format('YYYY-MM-DD')
-      fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dateFormatted}`)
+      fetch(`https://api.nasa.gov/planetary/apod?api_key=zdQkgsMWDn7jka4uq0K0MbAGoZAyhTjI8kTjYpil&date=${dateFormatted}`)
         .then((r) => r.json())
         .then((data) => {
           this.apod = data;
